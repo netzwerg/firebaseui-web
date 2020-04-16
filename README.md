@@ -27,7 +27,7 @@ npm run build build-npm-de
 cp dist/npm__de.js <path-to-your-project>/node_modules/firebaseui/dist/npm.js
 ```
 
-## ems.js
+## esm.js
 ```
 npm run build build-esm-de
 cp dist/esm__de.js <path-to-your-project>/node_modules/firebaseui/dist/esm.js
