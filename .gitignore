@@ -16,3 +16,6 @@ dist/
 #Local config.
 **/.firebaserc
 demo/public/config.js
+
+# IDE
+.idea

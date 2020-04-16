@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-const cleanCSS = require('gulp-clean-css');
+// const cleanCSS = require('gulp-clean-css');
 const closureBuilder = require('closure-builder');
 const closureCompiler = require('gulp-closure-compiler');
-const concatCSS = require('gulp-concat-css');
-const cssInlineImages = require('gulp-css-inline-images');
+// const concatCSS = require('gulp-concat-css');
+// const cssInlineImages = require('gulp-css-inline-images');
 const connect = require('gulp-connect');
 const fse = require('fs-extra');
-const flip = require('gulp-css-flip');
+// const flip = require('gulp-css-flip');
 const gulp = require('gulp');
 const path = require('path');
-const sass = require('gulp-sass');
+// const sass = require('gulp-sass');
 const streamqueue = require('streamqueue');
 const util = require('gulp-util');
 
@@ -114,10 +114,10 @@ const DEFAULT_LOCALE = 'en';
 
 // The list of all locales that are supported.
 const ALL_LOCALES = ['ar-XB', 'ar', 'bg', 'ca', 'cs', 'da', 'de', 'el', 'en',
-    'en-GB', 'en-XA', 'es-419', 'es', 'fa', 'fi', 'fil', 'fr', 'hi', 'hr', 'hu',
-    'id', 'it', 'iw', 'ja', 'ko', 'lt', 'lv', 'nl', 'no', 'pl', 'pt-PT',
-    'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sr', 'sv', 'th', 'tr', 'uk', 'vi',
-    'zh-CN', 'zh-TW'];
+  'en-GB', 'en-XA', 'es-419', 'es', 'fa', 'fi', 'fil', 'fr', 'hi', 'hr', 'hu',
+  'id', 'it', 'iw', 'ja', 'ko', 'lt', 'lv', 'nl', 'no', 'pl', 'pt-PT',
+  'pt-BR', 'ro', 'ru', 'sk', 'sl', 'sr', 'sv', 'th', 'tr', 'uk', 'vi',
+  'zh-CN', 'zh-TW'];
 
 // Default arguments to pass into Closure Compiler.
 const COMPILER_DEFAULT_ARGS = {
@@ -370,16 +370,16 @@ function buildCss(isRtl) {
 }
 
 // Concatenates and minifies the CSS sources for LTR languages.
-gulp.task('build-css', () => buildCss(false));
+// gulp.task('build-css', () => buildCss(false));
 
 // Concatenates and minifies the CSS sources for RTL languages.
-gulp.task('build-css-rtl', () => buildCss(true));
+// gulp.task('build-css-rtl', () => buildCss(true));
 
 // Creates a webserver that serves all files from the root of the package.
 gulp.task('serve', () => {
-  connect.server({
-    port: 4000
-  });
+  // connect.server({
+  //   port: 4000
+  // });
 });
 
 // Deletes intermediate files.
@@ -388,13 +388,13 @@ gulp.task('clean', () => fse.remove(TMP_DIR));
 // Executes the basic tasks for the default language.
 gulp.task('default', gulp.series(
     'build-externs', 'build-ts', 'build-js',
-    'build-npm', 'build-esm', 'build-css', 'build-css-rtl',
+    'build-npm', 'build-esm',
     'clean'
 ));
 
 // Builds everything (JS for all languages, both LTR and RTL CSS).
 gulp.task('build-all', gulp.series(
     'build-externs', 'build-ts', 'build-all-js',
-    'build-npm', 'build-esm', 'build-css', 'build-css-rtl',
+    'build-npm', 'build-esm',
     'clean'
 ));

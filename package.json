@@ -19,13 +19,7 @@
   "style": "dist/firebaseui.css",
   "scripts": {
     "build": "gulp",
-    "build-all": "gulp build-all",
-    "build-soy": "gulp build-soy",
-    "demo": "npm run build && ./buildtools/run_demo.sh",
-    "test": "npm run build && npm run generate-test-files && ./buildtools/run_tests.sh",
-    "serve": "npm run build && npm run generate-test-files && gulp serve",
-    "generate-test-files": "./buildtools/generate_test_files.sh",
-    "prepublish": "npm run test && cp -r dist demo/public"
+    "build-all": "gulp build-all"
   },
   "test": "npm run test",
   "author": "Google",
@@ -46,13 +40,8 @@
     "google-closure-library": "^20190415.0.0",
     "google-closure-templates": "^20150410.0.0",
     "gulp": "^4.0.0",
-    "gulp-clean-css": "^4.2.0",
     "gulp-closure-compiler": "^0.4.0",
-    "gulp-concat-css": "^3.1.0",
     "gulp-connect": "^5.5.0",
-    "gulp-css-flip": "^0.4.0",
-    "gulp-css-inline-images": "^0.1.1",
-    "gulp-sass": "^2.3.2",
     "gulp-util": "^3.0.7",
     "protractor": "^5.3.2",
     "streamqueue": "^1.1.1"
